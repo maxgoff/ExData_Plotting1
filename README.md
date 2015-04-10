@@ -1,3 +1,72 @@
+## Course Project 1
+This repo contains my work for the first project in the Coursera Exploratory Data Analysis course, which is one of the tracks in the Johns Hopkins Data Science Certificate program.
+
+Four R scripts are contained in the repo, each of which correspond to the four PNG files created when the scripts are executed. 
+
+Each script presumes the data specified in the assignment is located in a directory relative to execution:
+
+  datafile="../data/household_power_consumption.txt"
+
+A different pathname can be used by modyfing that string in each of the script.  Alternatively, simply modify the evocation of the function created in each scrpt to use a different value, such as:  
+
+     plot1(datafile="some/new/path")
+
+
+
+This default path should be changed if you plan to use the functions on your own system.  
+
+The R files in the repo produced the associated png images, which are also in this repo.  The png images appear to me to be identical to those included in the assignment instructions.
+
+## A Note on Configuration
+
+A number of functions in this assignment are dependent on the <a href="http://cran.r-project.org/web/packages/rJava/index.html">rJava package</a> in order to execute. Successfully installing that package proved to be more problematic than anticipated.  After some experimentation I did finally manage to succeed in loading the library on my Mac, but not without some changes.
+
+My configuration for this assignment:
+
+    - Mac Mini x64
+    - OSX Yosemite Version 10.10.2
+    - RStudio Version 0.98.1091  
+    - R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+    
+
+Failure to load the rJava library prevented loading of data.table and related fuctions.  I was finally successful by including the followinging lines in my .bash_profile:
+
+    export JAVA_HOME=/System/Library/Java/JavaVirtualMachine/jdi1.6.0.jdk/Contents/Home/
+    
+    alias rstudio='LDLIBRARY=$JAVA_HOME/jre/lib/server: open -a Rstudio'
+    
+
+The current version of rJava evidently has hard dependencies on Java 6, which was the default on my Mac initially.  Java 7 and Java 8 updates to my jdk were evidently the issue.  
+
+From what I have read, similar issues arise on Windows systems, but I have not tackled that problem.
+
+## Images Produced 
+
+The following images were produced by the associated functions included in this repo:
+### Plot 1
+
+
+![plot from plot1.R](plot1.png) 
+
+
+### Plot 2
+
+![plot from plot2.R](plot2.png) 
+
+### Plot 3
+
+![plot from plot3.R](plot3.png) 
+
+
+### Plot 4
+
+![plot from plot4.R](plot4.png) 
+
+
+
+The original instructions for the assignment follow.
+
+
 ## Introduction
 
 This assignment uses data from
